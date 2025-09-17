@@ -1,28 +1,86 @@
+"use client";
+
 import Link from "next/link";
+import { CTA } from "./CTA";
+import { useState } from "react";
 
 export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const handleClick = () => {
+    setIsOpen((prev) => !prev);
+  };
   return (
-    <div className="flex justify-between items-center uppercase text-neutral-dark">
+    <div className="relative flex justify-between items-center uppercase text-neutral-dark px-4 py-2 sm:px-8 md:py-4 lg:px-20">
       <span className="font-playfair-display text-xl tracking-widest cursor-pointer">
         Luminé
       </span>
-      <ul className="flex gap-10 font-inter text-sm font-light tracking-wider">
-        <li>
-          <Link href="#">Categories</Link>
-        </li>
-        <li>
-          <Link href="#">Browse Artists</Link>
-        </li>
-        <li>
-          <Link href="#">About</Link>
-        </li>
-        <li>
-          <Link href="#">Contact</Link>
-        </li>
-      </ul>
-      <button className="font-playfair-display bg-primary hover:bg-primary-hover duration-200 px-3 py-1 cursor-pointer">
-        <Link href="#">Book Consultation</Link>
+      <button className="md:hidden cursor-pointer" onClick={handleClick}>
+        {isOpen ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        )}
       </button>
+      <ul
+        className={`absolute md:static ${
+          !isOpen && "hidden md:flex"
+        } bg-neutral-light z-50 w-full md:relative md:w-auto text-center top-11 py-8 md:py-0 -mx-4 sm:-mx-8 md:mx-0 flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-10 font-inter text-sm font-light tracking-wide lg:tracking-wider`}
+      >
+        <li>
+          <Link href="#" className="hover:text-accent duration-200">
+            Categories
+          </Link>
+        </li>
+        <li>
+          <Link href="#" className="hover:text-accent duration-200">
+            Browse Artists
+          </Link>
+        </li>
+        <li>
+          <Link href="#" className="hover:text-accent duration-200">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link href="#" className="hover:text-accent duration-200">
+            Contact
+          </Link>
+        </li>
+        {isOpen && (
+          <div className="block md:hidden">
+            <CTA />
+          </div>
+        )}
+      </ul>
+      <div className="hidden md:block">
+        <CTA />
+      </div>
     </div>
   );
 };
