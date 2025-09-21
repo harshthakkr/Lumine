@@ -2,7 +2,7 @@ import { CTA } from "./CTA";
 
 export const Hero = () => {
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen mb-20">
       <video
         className="w-full h-full object-cover"
         autoPlay
@@ -14,7 +14,7 @@ export const Hero = () => {
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-neutral-dark/30 flex items-end pb-18 md:pb-12 justify-center">
+      <div className="absolute inset-0 bg-neutral-dark/30 flex items-end pb-12 justify-center">
         <div className="text-center text-neutral-light">
           <h1 className="text-4xl md:text-5xl font-bold font-playfair-display tracking-wider mb-4">
             Glam Up Anytime, Anywhere

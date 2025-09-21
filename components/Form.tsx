@@ -3,6 +3,7 @@
 import z from "zod";
 import { InputField } from "./InputField";
 import { useState } from "react";
+import { Confirmation } from "./Confirmation";
 
 const formSchema = z.object({
   fullName: z
@@ -40,6 +41,7 @@ export const Form = () => {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isConfirmed, setIsConfirmed] = useState(true);
 
   const validateForm = () => {
     try {
@@ -66,14 +68,7 @@ export const Form = () => {
 
     if (validateForm()) {
       try {
-        setFormData({
-          fullName: "",
-          email: "",
-          selectedCategory: "",
-          artist: "",
-          dateAndTime: "",
-        });
-        setErrors({});
+        setIsConfirmed(true);
       } catch (error) {
         console.error("Submission error:", error);
       }
@@ -83,71 +78,79 @@ export const Form = () => {
 
   return (
     <div className="min-h-screen font-inter bg-secondary/50 flex justify-center items-center drop-shadow-2xl">
-      <form
-        onSubmit={handleSubmit}
-        className="min-w-100 bg-neutral-light flex flex-col gap-8 p-12 text-sm"
-      >
-        <InputField
-          label="Full Name"
-          type="text"
-          placeholder="Your name here"
-          data={formData}
-          setData={setFormData}
-          value={formData.fullName}
-          fieldName="fullName"
-          error={errors.fullName}
-        />
-        <InputField
-          label="Email"
-          type="email"
-          placeholder="Eg. yourname@gmail.com"
-          data={formData}
-          setData={setFormData}
-          value={formData.email}
-          fieldName="email"
-          error={errors.email}
-        />
-        <InputField
-          label="Selected Category"
-          type="text"
-          data={formData}
-          setData={setFormData}
-          value={formData.selectedCategory}
-          fieldName="selectedCategory"
-          error={errors.selectedCategory}
-          isDisabled
-        />
-        <InputField
-          label="Artist"
-          type="text"
-          data={formData}
-          setData={setFormData}
-          value={formData.artist}
-          fieldName="artist"
-          error={errors.artist}
-          isDisabled
-        />
-        <InputField
-          label="Date and Time"
-          type="datetime-local"
-          data={formData}
-          setData={setFormData}
-          value={formData.dateAndTime}
-          fieldName="dateAndTime"
-          error={errors.dateAndTime}
-        />
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className={`py-2 text-neutral-light cursor-pointer duration-200 ${
-            isSubmitting
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-primary hover:bg-primary-hover"
-          }`}
+      {!isConfirmed ? (
+        <form
+          onSubmit={handleSubmit}
+          className="min-w-100 bg-neutral-light flex flex-col gap-8 p-12 text-sm"
         >
-          {isSubmitting ? "Booking..." : "Book"}
-        </button>
-      </form>
+          <InputField
+            label="Full Name"
+            type="text"
+            placeholder="Your name here"
+            data={formData}
+            setData={setFormData}
+            value={formData.fullName}
+            fieldName="fullName"
+            error={errors.fullName}
+          />
+          <InputField
+            label="Email"
+            type="email"
+            placeholder="Eg. yourname@gmail.com"
+            data={formData}
+            setData={setFormData}
+            value={formData.email}
+            fieldName="email"
+            error={errors.email}
+          />
+          <InputField
+            label="Selected Category"
+            type="text"
+            data={formData}
+            setData={setFormData}
+            value={formData.selectedCategory}
+            fieldName="selectedCategory"
+            error={errors.selectedCategory}
+            isDisabled
+          />
+          <InputField
+            label="Artist"
+            type="text"
+            data={formData}
+            setData={setFormData}
+            value={formData.artist}
+            fieldName="artist"
+            error={errors.artist}
+            isDisabled
+          />
+          <InputField
+            label="Date and Time"
+            type="datetime-local"
+            data={formData}
+            setData={setFormData}
+            value={formData.dateAndTime}
+            fieldName="dateAndTime"
+            error={errors.dateAndTime}
+          />
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={`py-2 text-neutral-light cursor-pointer duration-200 ${
+              isSubmitting
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-primary hover:bg-primary-hover"
+            }`}
+          >
+            {isSubmitting ? "Booking..." : "Book"}
+          </button>
+        </form>
+      ) : (
+        <Confirmation
+          bookingDateTime={formData.dateAndTime}
+          artist={formData.artist}
+          category={formData.selectedCategory}
+        />
+      )}
     </div>
   );
 };
