@@ -23,8 +23,14 @@ export const Category = ({
   const router = useRouter();
 
   const handleClick = () => {
-    const route = `/categories/${heading.toLowerCase().replace(/\s+/g, "-")}`;
-    router.push(`${route}`);
+    const slug = heading
+      .toLowerCase()
+      .replace(/[\/]/g, "-")
+      .replace(/[&]/g, "and")
+      .replace(/\s+/g, "-");
+
+    const route = `/categories/${slug}`;
+    router.push(route);
   };
 
   return (
