@@ -35,13 +35,13 @@ export const Form = () => {
   const [formData, setFormData] = useState<formDataProps>({
     fullName: "",
     email: "",
-    selectedCategory: "",
-    artist: "",
+    selectedCategory: localStorage?.getItem("category") || "",
+    artist: localStorage.getItem("artist") || "",
     dateAndTime: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isConfirmed, setIsConfirmed] = useState(true);
+  const [isConfirmed, setIsConfirmed] = useState(false);
 
   const validateForm = () => {
     try {

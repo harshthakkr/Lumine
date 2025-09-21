@@ -23,6 +23,7 @@ export const Category = ({
   const router = useRouter();
 
   const handleClick = () => {
+    localStorage.setItem("category", heading);
     const slug = heading
       .toLowerCase()
       .replace(/[\/]/g, "-")

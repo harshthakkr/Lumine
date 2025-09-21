@@ -1,0 +1,223 @@
+[
+  {
+    "name": "Amara Velázquez",
+    "profilePicture": "/artist-1.jpg",
+    "price": 400,
+    "ratings": 4.7,
+    "ratingsCount": 731,
+    "categories": [
+      "bridal-makeup",
+      "casual-everyday-makeup",
+      "festive-cultural-makeup",
+      "speciality-makeup"
+    ]
+  },
+  {
+    "name": "Selene Hartwell",
+    "profilePicture": "/artist-2.jpg",
+    "price": 370,
+    "ratings": 4.9,
+    "ratingsCount": 1425,
+    "categories": [
+      "party-and-glam-makeup",
+      "casual-everyday-makeup",
+      "fashion-and-editorial-makeup",
+      "festive-cultural-makeup",
+      "speciality-makeup"
+    ]
+  },
+  {
+    "name": "Lina Kovács",
+    "profilePicture": "/artist-3.jpg",
+    "price": 250,
+    "ratings": 4.3,
+    "ratingsCount": 1038,
+    "categories": [
+      "bridal-makeup",
+      "party-and-glam-makeup",
+      "casual-everyday-makeup",
+      "speciality-makeup"
+    ]
+  },
+  {
+    "name": "Vivienne Clarke",
+    "profilePicture": "/artist-4.jpg",
+    "price": 300,
+    "ratings": 4.5,
+    "ratingsCount": 1300,
+    "categories": [
+      "party-and-glam-makeup",
+      "casual-everyday-makeup",
+      "fashion-and-editorial-makeup",
+      "festive-cultural-makeup"
+    ]
+  },
+  {
+    "name": "Chloe Beaumont",
+    "profilePicture": "/artist-5.jpg",
+    "price": 500,
+    "ratings": 4.7,
+    "ratingsCount": 562,
+    "categories": [
+      "casual-everyday-makeup",
+      "festive-cultural-makeup",
+      "speciality-makeup"
+    ]
+  },
+  {
+    "name": "Anika Sørensen",
+    "profilePicture": "/artist-6.jpg",
+    "price": 400,
+    "ratings": 4.0,
+    "ratingsCount": 220,
+    "categories": [
+      "bridal-makeup",
+      "party-and-glam-makeup",
+      "casual-everyday-makeup",
+      "fashion-and-editorial-makeup"
+    ]
+  },
+  {
+    "name": "Isabella Moretti",
+    "profilePicture": "/artist-7.jpg",
+    "price": 200,
+    "ratings": 4.2,
+    "ratingsCount": 623,
+    "categories": [
+      "casual-everyday-makeup",
+      "festive-cultural-makeup",
+      "speciality-makeup"
+    ]
+  },
+  {
+    "name": "Sofia Duarte",
+    "profilePicture": "/artist-8.jpg",
+    "price": 450,
+    "ratings": 4.9,
+    "ratingsCount": 1132,
+    "categories": [
+      "party-and-glam-makeup",
+      "casual-everyday-makeup",
+      "fashion-and-editorial-makeup",
+      "festive-cultural-makeup"
+    ]
+  },
+  {
+    "name": "Elena Marković",
+    "profilePicture": "/artist-9.jpg",
+    "price": 480,
+    "ratings": 4.3,
+    "ratingsCount": 745,
+    "categories": [
+      "bridal-makeup",
+      "party-and-glam-makeup",
+      "casual-everyday-makeup",
+      "fashion-and-editorial-makeup"
+    ]
+  },
+  {
+    "name": "Harper Whitfield",
+    "profilePicture": "/artist-10.jpg",
+    "price": 400,
+    "ratings": 4.5,
+    "ratingsCount": 999,
+    "categories": [
+      "casual-everyday-makeup",
+      "festive-cultural-makeup",
+      "speciality-makeup"
+    ]
+  },
+  {
+    "name": "Camila Andrade",
+    "profilePicture": "/artist-11.jpg",
+    "price": 250,
+    "ratings": 4.8,
+    "ratingsCount": 513,
+    "categories": [
+      "bridal-makeup",
+      "party-and-glam-makeup",
+      "casual-everyday-makeup",
+      "fashion-and-editorial-makeup",
+      "festive-cultural-makeup"
+    ]
+  },
+  {
+    "name": "Priya Kapoor",
+    "profilePicture": "/artist-12.jpg",
+    "price": 800,
+    "ratings": 5.0,
+    "ratingsCount": 978,
+    "categories": [
+      "bridal-makeup",
+      "party-and-glam-makeup",
+      "casual-everyday-makeup",
+      "festive-cultural-makeup",
+      "speciality-makeup"
+    ]
+  },
+  {
+    "name": "Julien Lefèvre",
+    "profilePicture": "/artist-13.jpg",
+    "price": 320,
+    "ratings": 4.6,
+    "ratingsCount": 481,
+    "categories": [
+      "casual-everyday-makeup",
+      "fashion-and-editorial-makeup",
+      "festive-cultural-makeup",
+      "speciality-makeup"
+    ]
+  },
+  {
+    "name": "Adrian Castillo",
+    "profilePicture": "/artist-14.jpg",
+    "price": 350,
+    "ratings": 4.0,
+    "ratingsCount": 1340,
+    "categories": [
+      "party-and-glam-makeup",
+      "casual-everyday-makeup",
+      "festive-cultural-makeup",
+      "speciality-makeup"
+    ]
+  },
+  {
+    "name": "Danielle Foster",
+    "profilePicture": "/artist-15.jpg",
+    "price": 600,
+    "ratings": 4.9,
+    "ratingsCount": 1386,
+    "categories": [
+      "bridal-makeup",
+      "casual-everyday-makeup",
+      "fashion-and-editorial-makeup",
+      "speciality-makeup"
+    ]
+  },
+  {
+    "name": "Ethan Gallagher",
+    "profilePicture": "/artist-16.jpg",
+    "price": 450,
+    "ratings": 4.7,
+    "ratingsCount": 796,
+    "categories": [
+      "bridal-makeup",
+      "party-and-glam-makeup",
+      "casual-everyday-makeup",
+      "festive-cultural-makeup"
+    ]
+  },
+  {
+    "name": "Mateo Rossi",
+    "profilePicture": "/artist-17.jpg",
+    "price": 550,
+    "ratings": 4.8,
+    "ratingsCount": 1270,
+    "categories": [
+      "casual-everyday-makeup",
+      "casual-everyday-makeup",
+      "fashion-and-editorial-makeup",
+      "festive-cultural-makeup"
+    ]
+  }
+]
