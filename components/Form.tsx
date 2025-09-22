@@ -2,7 +2,7 @@
 
 import z from "zod";
 import { InputField } from "./InputField";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Confirmation } from "./Confirmation";
 
 const formSchema = z.object({
@@ -19,6 +19,7 @@ export interface formDataProps {
   fullName: string;
   email: string;
   selectedCategory: string;
+  price: string;
   artist: string;
   dateAndTime: string;
 }
@@ -35,13 +36,23 @@ export const Form = () => {
   const [formData, setFormData] = useState<formDataProps>({
     fullName: "",
     email: "",
-    selectedCategory: localStorage?.getItem("category") || "",
-    artist: localStorage.getItem("artist") || "",
+    selectedCategory: "",
+    price: "",
+    artist: "",
     dateAndTime: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isConfirmed, setIsConfirmed] = useState(false);
+
+  useEffect(() => {
+    setFormData((prev) => ({
+      ...prev,
+      selectedCategory: localStorage.getItem("category") || "",
+      artist: localStorage.getItem("artist") || "",
+      price: localStorage.getItem("price") || "",
+    }));
+  }, []);
 
   const validateForm = () => {
     try {
@@ -81,7 +92,7 @@ export const Form = () => {
       {!isConfirmed ? (
         <form
           onSubmit={handleSubmit}
-          className="min-w-100 bg-neutral-light flex flex-col gap-8 p-12 text-sm"
+          className="min-w-80 xs:min-w-100 bg-neutral-light flex flex-col gap-8 p-12 text-sm"
         >
           <InputField
             label="Full Name"
@@ -146,7 +157,9 @@ export const Form = () => {
         </form>
       ) : (
         <Confirmation
-          bookingDateTime={formData.dateAndTime}
+          email={formData.email}
+          bookingDateTime={new Date(formData.dateAndTime)}
+          price={formData.price}
           artist={formData.artist}
           category={formData.selectedCategory}
         />

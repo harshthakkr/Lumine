@@ -36,7 +36,7 @@ export const InputField = ({
         type={type}
         placeholder={placeholder || ""}
         value={value}
-        className={`border-b outline-none pb-1 text-neutral-dark transition-colors duration-300 ${
+        className={`border-b outline-none pb-1 text-neutral-dark disabled:cursor-not-allowed transition-colors duration-300 ${
           error ? "border-red-500" : "border-neutral-dark"
         }`}
         disabled={isDisabled}

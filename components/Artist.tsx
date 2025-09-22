@@ -18,6 +18,7 @@ export const Artist = ({
   const router = useRouter();
   const handleClick = () => {
     localStorage.setItem("artist", name);
+    localStorage.setItem("price", String(price));
     router.push("/submit");
   };
   return (
