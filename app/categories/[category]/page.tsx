@@ -15,13 +15,14 @@ export async function generateStaticParams() {
 }
 
 interface CategoryProps {
-  params: {
+  params: Promise<{
     category: string;
-  };
+  }>;
 }
 
-const Category = ({ params }: CategoryProps) => {
-  const categoryString = params.category || "";
+const Category = async ({ params }: CategoryProps) => {
+  const resolvedParams = await params;
+  const categoryString = resolvedParams.category || "";
 
   if (!categoryString) {
     return <div>Invalid category</div>;
