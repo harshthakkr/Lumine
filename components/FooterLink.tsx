@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 export const FooterLink = ({ text, id }: { text: string; id?: string }) => {
-  console.log(id);
   return (
     <li>
       <Link

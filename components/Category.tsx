@@ -1,8 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import { SubCategories } from "./SubCategories";
 import { useRouter } from "next/navigation";
+import { RightArrowIcon } from "./icons/RightArrowIcon";
 
 interface CategoryProps {
   id?: string;
@@ -46,11 +47,11 @@ export const Category = ({
             : "md:order-1 md:justify-self-end"
         }`}
       >
-        <Image
+        <OptimizedImage
           src={image}
           width={450}
           height={450}
-          alt=""
+          alt={`${heading} model`}
           className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
         />
       </div>
@@ -70,18 +71,7 @@ export const Category = ({
           <button className="uppercase cursor-pointer text-sm mt-8 relative overflow-hidden tracking-widest">
             <span className="relative z-10 flex gap-1 items-center">
               <span>Learn More</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                className="size-4"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M2 8c0 .414.336.75.75.75h8.69l-1.22 1.22a.75.75 0 1 0 1.06 1.06l2.5-2.5a.75.75 0 0 0 0-1.06l-2.5-2.5a.75.75 0 1 0-1.06 1.06l1.22 1.22H2.75A.75.75 0 0 0 2 8Z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <RightArrowIcon />
             </span>
             <div className="absolute bottom-0 left-0 h-px bg-neutral-dark w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
           </button>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 export const CTA = ({ onClick, id }: { onClick?: () => void; id?: string }) => {
-  console.log("id", id);
   return (
     <button
       onClick={onClick}

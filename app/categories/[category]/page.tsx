@@ -1,14 +1,27 @@
-"use client";
-
-import { useParams } from "next/navigation";
-import artists from "@/artists.json";
+import artists from "../../../artists.json";
 import { Artist } from "@/components/Artist";
 
-const Category = () => {
-  const params = useParams();
-  const categoryString = Array.isArray(params.category)
-    ? params.category[0]
-    : params.category || "";
+export async function generateStaticParams() {
+  const categories = new Set<string>();
+  artists.forEach((artist) => {
+    artist.categories.forEach((category) => {
+      categories.add(category);
+    });
+  });
+
+  return Array.from(categories).map((category) => ({
+    category: category,
+  }));
+}
+
+interface CategoryProps {
+  params: {
+    category: string;
+  };
+}
+
+const Category = ({ params }: CategoryProps) => {
+  const categoryString = params.category || "";
 
   if (!categoryString) {
     return <div>Invalid category</div>;

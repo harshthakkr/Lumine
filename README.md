@@ -65,3 +65,26 @@ The platform is deployed and fully functional for testing the booking workflow a
 
 - Playfair Display serif for brand elements and headings
 - Inter sans-serif for interface text and readability
+
+### Performance & Optimization
+
+**Static Site Generation (SSG)**
+
+The application is configured for static site generation to maximize performance:
+
+- **next.config.ts**: Configured with `output: 'export'` for static HTML generation
+- **Pre-rendered Routes**: All category pages are pre-generated at build time
+- **CDN Ready**: Static files optimized for global content delivery
+
+**Image & Video Optimization**
+
+- **OptimizedImage Component**: Custom image component with lazy loading and async decoding
+- **OptimizedVideo Component**: Enhanced video component with performance optimizations
+- **Static Asset Handling**: All media assets properly configured for static export
+
+**Performance Features**
+
+- Lazy loading for all images and videos
+- Compressed static assets for faster downloads
+- Pre-rendered HTML for instant page loads
+- SEO optimized with static generation
