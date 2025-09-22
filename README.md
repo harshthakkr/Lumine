@@ -1,6 +1,6 @@
 # Luminé - Makeup Artist Booking Platform
 
-_Professional booking platform designed for the beauty industry_
+_Professional artist booking platform designed for the beauty industry_
 
 ## Overview
 
@@ -72,7 +72,6 @@ The platform is deployed and fully functional for testing the booking workflow a
 
 The application is configured for static site generation to maximize performance:
 
-- **next.config.ts**: Configured with `output: 'export'` for static HTML generation
 - **Pre-rendered Routes**: All category pages are pre-generated at build time
 - **CDN Ready**: Static files optimized for global content delivery
 

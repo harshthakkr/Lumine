@@ -1,18 +1,18 @@
 import { CTA } from "./CTA";
+import { OptimizedVideo } from "./OptimizedVideo";
 
 export const Hero = () => {
   return (
     <div className="relative w-full h-screen mb-20">
-      <video
+      <OptimizedVideo
+        src="/hero-video.mp4"
         className="w-full h-full object-cover"
         autoPlay
         muted
         loop
         playsInline
         preload="metadata"
-      >
-        <source src="/hero-video.mp4" type="video/mp4" />
-      </video>
+      />
 
       <div className="absolute inset-0 bg-neutral-dark/30 flex items-end pb-12 justify-center">
         <div className="text-center text-neutral-light">
