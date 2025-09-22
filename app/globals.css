@@ -16,3 +16,8 @@
   --breakpoint-md: 820px;
   --breakpoint-lg: 1210px;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}

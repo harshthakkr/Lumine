@@ -6,11 +6,16 @@ import { useState } from "react";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const handleClick = () => {
     setIsOpen((prev) => !prev);
   };
+
   return (
-    <div className="relative flex justify-between items-center uppercase text-neutral-dark px-4 py-2 sm:px-8 md:py-4 lg:px-20">
+    <div
+      id="top"
+      className="relative flex justify-between items-center uppercase text-neutral-dark px-4 py-2 sm:px-8 md:py-4 lg:px-20"
+    >
       <span className="font-playfair-display text-xl tracking-widest cursor-pointer">
         Luminé
       </span>
@@ -53,7 +58,7 @@ export const Navbar = () => {
         } bg-neutral-light z-50 w-full md:relative md:w-auto text-center top-11 py-8 md:py-0 -mx-4 sm:-mx-8 md:mx-0 flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-10 font-inter text-sm font-light tracking-wide lg:tracking-wider`}
       >
         <li>
-          <Link href="#" className="hover:text-accent duration-200">
+          <Link href="#categories" className="hover:text-accent duration-200">
             Categories
           </Link>
         </li>
@@ -74,12 +79,12 @@ export const Navbar = () => {
         </li>
         {isOpen && (
           <div className="block md:hidden">
-            <CTA />
+            <CTA id="#categories" />
           </div>
         )}
       </ul>
       <div className="hidden md:block">
-        <CTA />
+        <CTA id="#categories" />
       </div>
     </div>
   );

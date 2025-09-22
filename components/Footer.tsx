@@ -10,7 +10,7 @@ export const Footer = () => {
             <FooterHeading title="Company" />
             <ul className="flex flex-col gap-4 font-inter">
               <FooterLink text="Home" />
-              <FooterLink text="Categories" />
+              <FooterLink text="Categories" id="#categories" />
               <FooterLink text="About" />
               <FooterLink text="Contact" />
             </ul>

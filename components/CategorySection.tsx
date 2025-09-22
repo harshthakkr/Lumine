@@ -12,7 +12,10 @@ export const CategorySection = () => {
           looks designed to match your style, occasion and personality.
         </p>
       </div>
-      <div className="flex flex-col gap-16 justify-center items-center">
+      <div
+        id="categories"
+        className="flex flex-col gap-16 justify-center items-center"
+      >
         <Category
           image="/category-1.jpg"
           heading="Bridal Makeup"

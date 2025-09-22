@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luminé - Makeup Artist Booking Platform
 
-## Getting Started
+_Professional booking platform designed for the beauty industry_
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Luminé is a modern web application that streamlines the process of discovering and booking professional makeup artists. Built with Next.js 14 and TypeScript, it delivers a seamless user experience while maintaining the sophistication expected in the luxury beauty market.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Demo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**[View Application](https://makeup-artist-booking-platform.vercel.app/)**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The platform is deployed and fully functional for testing the booking workflow and user interface.
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend Framework:** Next.js 15
+- **Language:** TypeScript for type safety and developer experience
+- **Styling:** Tailwind CSS 4.0 with custom design system
+- **Validation:** Zod schema validation for form handling
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Quick Start
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
 
-## Deploy on Vercel
+- Node.js 18.0 or higher
+- npm package manager
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/harshthakkr/makeup-artist-booking-platform
+   cd makeup-artist-booking-platform
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Access the application**
+   - Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Architecture & Design Decisions
+
+### Design System Implementation
+
+**Color Palette Strategy**
+
+- Primary gold (`#d4a574`) establishes luxury positioning
+- Neutral cream (`#f5e6d3`) provides sophisticated backdrop
+- Accent rose (`#d4707a`) adds warmth without overwhelming
+- High contrast text ensures accessibility compliance
+
+**Typography Hierarchy**
+
+- Playfair Display serif for brand elements and headings
+- Inter sans-serif for interface text and readability

@@ -23,7 +23,7 @@ export const Hero = () => {
             Book trusted makeup artists for every occasion, from bridal to
             red-carpet glam.
           </p>
-          <CTA />
+          <CTA id="#categories" />
         </div>
       </div>
     </div>

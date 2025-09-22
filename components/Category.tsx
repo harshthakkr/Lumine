@@ -59,7 +59,7 @@ export const Category = ({
           isReverse ? "md:order-1 md:flex justify-self-end" : "md:order-2"
         }`}
       >
-        <div className="w-full">
+        <div className="w-full px-4 md:p-0">
           <h3 className="font-playfair-display text-3xl font-medium transition-all duration-500 group-hover:scale-105 mb-2">
             {heading}
           </h3>
