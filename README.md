@@ -4,13 +4,10 @@ _Professional artist booking platform designed for the beauty industry_
 
 ## Overview
 
-Luminé is a modern web application that streamlines the process of discovering and booking professional makeup artists. Built with Next.js 14 and TypeScript, it delivers a seamless user experience while maintaining the sophistication expected in the luxury beauty market.
-
-## Live Demo
-
-**[View Application](https://makeup-artist-booking-platform.vercel.app/)**
+Luminé is a modern web application that streamlines the process of discovering and booking professional makeup artists. Built with Next.js 15 and TypeScript, it delivers a seamless user experience while maintaining the sophistication expected in the luxury beauty market.
 
 The platform is deployed and fully functional for testing the booking workflow and user interface.
+**[View Application](https://makeup-artist-booking-platform.vercel.app/)**
 
 ## Tech Stack
 
@@ -77,13 +74,10 @@ The application is configured for static site generation to maximize performance
 
 **Image & Video Optimization**
 
-- **OptimizedImage Component**: Custom image component with lazy loading and async decoding
-- **OptimizedVideo Component**: Enhanced video component with performance optimizations
+- **`OptimizedImage` Component**: Custom image component with lazy loading and async decoding
+- **`OptimizedVideo` Component**: Enhanced video component with performance optimizations
 - **Static Asset Handling**: All media assets properly configured for static export
 
-**Performance Features**
+## Live Demo
+https://github.com/user-attachments/assets/bd30e50e-e512-4a6a-bb48-6f2d1c4000b8
 
-- Lazy loading for all images and videos
-- Compressed static assets for faster downloads
-- Pre-rendered HTML for instant page loads
-- SEO optimized with static generation
