@@ -24,18 +24,20 @@ export default function RootLayout({
       </head>
       <body className="bg-neutral-light antialiased">
         {children}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-EPC6BJRW3L"
-          strategy="afterInteractive"
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPC6BJRW3L" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-EPC6BJRW3L', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-EPC6BJRW3L');
-          `}
-        </Script>
       </body>
     </html>
   );
