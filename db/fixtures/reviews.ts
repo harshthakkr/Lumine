@@ -1,0 +1,146 @@
+import type { CategorySlug } from "./categories";
+
+// Review copy for generated history. `{artist}` is replaced with the
+// artist's first name. Written to vary in length, tone and detail the way
+// real reviews do; a share of generated reviews are rating-only.
+
+type ReviewPool = Record<5 | 4 | 3 | 2, string[]>;
+
+export const GENERAL_REVIEWS: ReviewPool = {
+  5: [
+    "Absolutely amazing. {artist} listened to exactly what I wanted and made it even better.",
+    "I've never felt this confident in photos. My makeup lasted all night, no touch-ups needed.",
+    "So professional and so kind. Arrived early, set up quickly and made me feel completely at ease.",
+    "Perfect. Will be booking again.",
+    "{artist} is a magician. I sent a blurry Pinterest screenshot and got something better than the reference.",
+    "My skin looked like skin, just better. Everyone asked who did my makeup.",
+    "Honestly the best money I've spent this year.",
+    "Calm, fast and incredibly talented. 10/10.",
+    "{artist} matched my foundation perfectly on the first try, which never happens for me.",
+    "I was nervous because I rarely wear makeup, but {artist} made it feel natural and explained everything.",
+    "Lovely energy, gorgeous result.",
+    "Booked last minute and {artist} still delivered. Lifesaver!",
+    "The lashes alone were worth it. Comfortable all night and they looked so natural.",
+    "Clean kit, fresh brushes, great hygiene. That matters to me and it was clearly a priority.",
+    "Exceeded expectations. My friends have already asked for the booking link.",
+    "I have very oily skin and usually look shiny within an hour. Not this time. Still matte at midnight.",
+    "{artist} asked great questions before starting and actually listened to the answers.",
+    "I booked for my engagement shoot and the photographer kept saying how easy my skin was to edit.",
+    "Third time booking {artist} and it gets better every time.",
+    "Arrived with everything, including a ring light and a stool for my tiny apartment. So thoughtful.",
+    "I felt like the best version of myself. That's the whole review.",
+    "Super gentle around my eyes, which are really sensitive. No watering at all.",
+    "Fast without ever feeling rushed. We were done ten minutes early.",
+    "My mom is 68 and {artist} made her feel so beautiful. She hasn't stopped talking about it.",
+    "The brows! I didn't know my face could look this balanced.",
+    "Beautiful work and a genuinely lovely person. Good chat, too.",
+    "Every photo from the night is a keeper. Thank you!",
+    "{artist} matched my vibe perfectly: polished but still me.",
+    "Showed up in the pouring rain, completely unbothered, and still made me look fresh.",
+    "Wore it for a 12-hour day and it barely moved.",
+    "Gave me a little tutorial for touch-ups which saved me later in the evening.",
+    "Worth every dollar. I've been to department-store counters and this is a different league.",
+    "So relaxing I nearly fell asleep in the chair.",
+  ],
+  4: [
+    "Really beautiful work. Ran about 15 minutes late but kept me updated and still finished on time.",
+    "Loved the look! Slightly heavier than I'd normally go, but it photographed perfectly.",
+    "Great experience overall. Would have liked a little more time to talk through options first.",
+    "Very talented. The base was flawless; the lip faded a bit by the end of the night.",
+    "Solid work and very friendly. Parking near the studio was a pain, though that's not {artist}'s fault.",
+    "Good value for the price. I'd book again for a smaller event.",
+    "Pretty much exactly what I asked for. Happy!",
+    "Gorgeous eye look. The foundation needed a small tweak but {artist} fixed it right away.",
+    "Lovely result. The booking confirmation took a while, but the day itself was great.",
+    "Very skilled. I'd ask for slightly lighter coverage next time, but that's on me for not saying.",
+    "Great makeup, a little pricey for a shorter look, but I'd still recommend.",
+    "Beautiful work. The studio was a bit hard to find, so follow the directions closely!",
+    "Happy with it overall. The lashes were heavier than I expected but looked great in photos.",
+    "Professional and kind. Not the most creative look I've had, but very polished.",
+  ],
+  3: [
+    "The makeup was nice but not quite what I had in mind. It was more glam than the soft look I asked for.",
+    "Fine overall. Started late and felt a bit rushed at the end.",
+    "Talented, but communication before the appointment was slow. It took two days to hear back.",
+    "The base was lovely but the eyeshadow creased by the evening.",
+    "Nice person, but the look was more dramatic than our trial and I felt a little overdone.",
+  ],
+  2: [
+    "Arrived 40 minutes late, so we had to rush. The makeup itself was okay.",
+    "Didn't really listen to my references. Not for me, unfortunately.",
+  ],
+};
+
+export const CATEGORY_REVIEWS: Partial<Record<CategorySlug, string[]>> = {
+  "bridal-makeup": [
+    "From the trial to the final touch-up before our exit, {artist} was the calm in the storm.",
+    "My makeup made it through a ceremony in the rain, a ferry ride and six hours of dancing.",
+    "{artist} did my whole bridal party in under three hours and every single one of us looked radiant.",
+    "Our photographer said it was the best bridal makeup she'd seen all season.",
+    "{artist} did my wedding makeup and I cried looking in the mirror (and thankfully the makeup didn't budge). It lasted 14 hours.",
+    "The trial was so helpful. By the wedding day we knew exactly what we were doing, and it was the calmest part of my morning.",
+    "Did me, my mom and three bridesmaids and kept us exactly on schedule. Every photo is perfect.",
+    "I wanted to look like myself, just elevated, and that's exactly what I got. My husband said I looked like me, only glowing.",
+    "Survived happy tears, a humid outdoor ceremony and hours of dancing. Still looked fresh in the last photos.",
+    "{artist} handled my very particular mother-in-law with grace. Worth every penny for that alone.",
+  ],
+  "party-and-glam-makeup": [
+    "Full glam for my sister's engagement party. I felt like a celebrity all night.",
+    "Booked a last-minute glam before a launch event. Fast, flawless and so fun.",
+    "The cut crease was perfect and the lashes lasted through a night of dancing.",
+    "Birthday glam was everything. The photos look airbrushed and I didn't touch up once.",
+    "Did a full glam for a gala and got stopped three times to ask who did my makeup.",
+    "Exactly the sultry look I wanted for my 30th. The liner was razor sharp.",
+    "Booked a soft glam for a rooftop party. Glowy, sculpted and it held up in the heat.",
+  ],
+  "casual-everyday-makeup": [
+    "Booked before a big work presentation. I looked put-together without looking 'done'.",
+    "Perfect natural look for our family photos. Everyone looked like themselves, just brighter.",
+    "{artist} made my everyday makeup feel effortless. I've been recreating it all week.",
+    "The lesson changed my mornings. I finally know what to do with my brows!",
+    "Booked for headshots and the photographer said it was the easiest retouch job he'd had.",
+    "Natural, fresh and so quick. Exactly what I needed before a big interview.",
+    "{artist} taught me a five-minute routine using my own products. Super practical.",
+  ],
+  "fashion-and-editorial-makeup": [
+    "Kept the look consistent across a 10-hour shoot with 14 setups. Unreal stamina.",
+    "Brought references we hadn't even thought of. The final images are the best in our portfolio.",
+    "Great communication with the photographer and stylist. Made the whole day run smoothly.",
+    "Booked {artist} for a campaign shoot and they were a dream on set: fast changes, great ideas and very calm under pressure.",
+    "Brought our mood board to life and then some. The team was thrilled with the final images.",
+    "Incredible creative range. We did three very different looks in one afternoon.",
+    "Professional, prepared and genuinely collaborative. Will hire again for our next lookbook.",
+  ],
+  "festive-cultural-makeup": [
+    "Did my mehendi look and my mum's. Bright, joyful and held up through all the dancing.",
+    "Exactly the regal look I wanted for Diwali. My aunties were impressed, which is saying something.",
+    "{artist} understood the cultural details without me having to explain everything.",
+    "Perfect Diwali look, rich and glowing, and it held up through hours of family photos and food.",
+    "Garba all night and my makeup didn't move. I'm impressed!",
+    "Did my Eid look and understood exactly how to work with my hijab and outfit colours.",
+    "{artist} knew exactly how to balance heavy jewellery with the makeup. So elegant.",
+  ],
+  "speciality-makeup": [
+    "Stage makeup for our musical held up under hot lights for three hours.",
+    "Airbrush base looked like real skin in person and flawless on camera.",
+    "My podcast launch video looks so professional thanks to {artist}.",
+    "Airbrush was flawless in the August heat. I couldn't believe how light it felt.",
+    "Shot a 4K product video and the skin looked perfect, even in close-up.",
+    "Stage makeup for my dance recital was perfect from the back row and still pretty up close.",
+    "HD makeup for a TV segment, and the producer asked for {artist}'s contact afterwards.",
+  ],
+};
+
+export const ARTIST_REPLIES = {
+  positive: [
+    "Thank you so much, {client}! It was such a joy working with you. 💛",
+    "This made my day. Thank you, {client}, and congratulations again!",
+    "{client}, you were an absolute dream to work with. Hope to see you again soon!",
+    "Thank you for trusting me with your big day, {client}!",
+    "So glad you loved it! Thank you for the kind words, {client}.",
+  ],
+  critical: [
+    "Thank you for the honest feedback, {client}. I'm sorry about the delay. I've adjusted how I schedule travel so it doesn't happen again.",
+    "I appreciate you sharing this, {client}. I'd love the chance to make it right, so please message me any time.",
+  ],
+};

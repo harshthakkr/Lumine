@@ -1,63 +1,35 @@
-"use client";
+import { eq } from "drizzle-orm";
+import { artistProfiles } from "@/db/schema";
+import { getSession } from "@/lib/auth";
+import { db } from "@/lib/db";
+import { DemoBar } from "./demo/DemoBar";
+import { NavbarMenu, type NavUser } from "./NavbarMenu";
 
-import Link from "next/link";
-import { CTA } from "./CTA";
-import { useState } from "react";
-import { CloseIcon } from "./icons/CloseIcon";
-import { HamburgerIcon } from "./icons/HamburgerIcon";
+/** Sticky site header: the demo bar (when exploring) above role-aware navigation. */
+export async function Navbar() {
+  const session = await getSession();
+  let user: NavUser | null = null;
 
-export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const handleClick = () => {
-    setIsOpen((prev) => !prev);
-  };
+  if (session) {
+    const { name, email, image, role, demoWorkspaceId } = session.user;
+    let profileSlug: string | null = null;
+    if (role === "artist") {
+      const [profile] = await db
+        .select({ slug: artistProfiles.slug })
+        .from(artistProfiles)
+        .where(eq(artistProfiles.userId, session.user.id))
+        .limit(1);
+      profileSlug = profile?.slug ?? null;
+    }
+    user = { name, email, image: image ?? null, role, isDemo: !!demoWorkspaceId, profileSlug };
+  }
 
   return (
-    <div
-      id="top"
-      className="relative flex justify-between items-center uppercase text-neutral-dark px-4 py-2 sm:px-8 md:py-4 lg:px-20"
-    >
-      <span className="font-playfair-display text-xl tracking-widest cursor-pointer">
-        Luminé
-      </span>
-      <button className="md:hidden cursor-pointer" onClick={handleClick}>
-        {isOpen ? <CloseIcon /> : <HamburgerIcon />}
-      </button>
-      <ul
-        className={`absolute md:static ${
-          !isOpen && "hidden md:flex"
-        } bg-neutral-light z-50 w-full md:relative md:w-auto text-center top-11 py-8 md:py-0 -mx-4 sm:-mx-8 md:mx-0 flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-10 font-inter text-sm font-light tracking-wide lg:tracking-wider`}
-      >
-        <li>
-          <Link href="#categories" className="hover:text-accent duration-200">
-            Categories
-          </Link>
-        </li>
-        <li>
-          <Link href="#" className="hover:text-accent duration-200">
-            Browse Artists
-          </Link>
-        </li>
-        <li>
-          <Link href="#" className="hover:text-accent duration-200">
-            About
-          </Link>
-        </li>
-        <li>
-          <Link href="#" className="hover:text-accent duration-200">
-            Contact
-          </Link>
-        </li>
-        {isOpen && (
-          <div className="block md:hidden">
-            <CTA id="#categories" />
-          </div>
-        )}
-      </ul>
-      <div className="hidden md:block">
-        <CTA id="#categories" />
-      </div>
-    </div>
+    <header className="sticky top-0 z-50">
+      {session?.user.demoWorkspaceId && (
+        <DemoBar workspaceId={session.user.demoWorkspaceId} role={session.user.role} name={session.user.name} />
+      )}
+      <NavbarMenu user={user} />
+    </header>
   );
-};
+}

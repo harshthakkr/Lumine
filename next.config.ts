@@ -1,16 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  trailingSlash: true,
+  typedRoutes: true,
   images: {
-    unoptimized: true,
+    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com", pathname: "/photo-**" }],
   },
-  // Optimize static assets for production
-  compress: true,
-  // Ensure proper handling of static files
-  experimental: {
-    optimizePackageImports: ["lucide-react"],
+  async redirects() {
+    return [
+      // Category pages from the original static site now live in search.
+      // Old account URLs from before the bookings/saved split.
+      { source: "/account", destination: "/bookings", permanent: true },
+      { source: "/account/bookings/:reference", destination: "/bookings/:reference", permanent: true },
+      {
+        source: "/categories/:category",
+        destination: "/artists?category=:category",
+        permanent: true,
+      },
+    ];
   },
 };
 

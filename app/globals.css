@@ -9,15 +9,64 @@
   --color-neutral-dark: #2c2c2c;
   --color-neutral-light: #fefcf9;
 
-  --font-playfair-display: "Playfair Display", serif;
-  --font-inter: "Inter", sans-serif;
+  /* Supporting tokens for app surfaces */
+  --color-ink-muted: #6f6862;
+  --color-line: #ece1d2;
+  --color-surface: #ffffff;
+  --color-success: #4f7a5a;
+  --color-success-soft: #e8f0e8;
+  --color-warning: #a8702a;
+  --color-warning-soft: #f8ecd8;
+  --color-danger: #b3473f;
+  --color-danger-soft: #f7e3e0;
 
   --breakpoint-xs: 540px;
   --breakpoint-md: 820px;
   --breakpoint-lg: 1210px;
+
+  --animate-rise: rise 400ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Fonts come from next/font, which exposes them as CSS variables on <html>. */
+@theme inline {
+  --font-playfair-display: var(--font-playfair), "Playfair Display", serif;
+  --font-inter: var(--font-sans), "Inter", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 60px;
+}
+
+body {
+  font-family: var(--font-sans), "Inter", sans-serif;
+  color: var(--color-neutral-dark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
